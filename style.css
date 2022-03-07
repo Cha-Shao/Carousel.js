@@ -1,0 +1,57 @@
+body {
+  background-color: #121212;
+}
+
+.carouselContainer {
+  overflow: hidden;
+  width: 1031px;
+  height: 580px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.carouselContainer .previous {
+  position: absolute;
+  z-index: 2;
+  left: 12px;
+  top: 45%;
+}
+
+.carouselContainer .next {
+  position: absolute;
+  z-index: 2;
+  right: 12px;
+  top: 45%;
+}
+
+.carouselContainer .carouselicons {
+  color: #e5e6eb;
+  font-size: 3rem;
+  opacity: 0;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.carouselContainer:hover .carouselicons {
+  opacity: 1;
+}
+
+.carousel {
+  -webkit-transition: 1.2s ease;
+  transition: 1.2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.carouselItem {
+  position: relative;
+  height: 100%;
+}
+
+.carouselItem img {
+  height: 100%;
+}
+/*# sourceMappingURL=style.css.map */
