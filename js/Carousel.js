@@ -26,16 +26,16 @@ function carouselPrevious(){
     carousel.style.transform = "translateX(-"+i+"00%)";
 }
 function carouselNext(){
-    const _i = i
     i++
     if (i > items.length-1) i = 0;
+    const _i = i
     carousel.style.transform = "translateX(-"+i+"00%)";
     if (document.querySelector("[c-point]")){
         const carouselPoint = document.getElementsByClassName('carouselPoint')
         for (let i = 0; i < items.length; i++){
             const carouselPoint = document.getElementsByClassName('carouselPoint')
             carouselPoint[i].style.cssText='width: 9px;height:9px;background:lightgray;border-radius:100%;margin:5px;z-index:2;cursor:pointer;'}
-            carouselPoint[_i].style.background='white'
+        carouselPoint[_i].style.background='white'
     }
 }
 
@@ -66,10 +66,10 @@ function setCarouselPoint(){
     }
 }
 
+// 页码点跳转
 function setCarouselPage(setPage){
     i = setPage
     carousel.style.transform = "translateX(-"+i+"00%)";
 }
 
 setCarouselPointContainer()
-document.getElementsByClassName('carouselContainer').onclick='setCarouselPage()'
