@@ -22,6 +22,17 @@
         <i class="iconfont icon-next carouselicons" onclick="carouselNext()"></i>
     </div>
 </div>
+<style>
+.carouselContainer{
+    overflow: hidden;
+    position: relative;
+}
+.carousel{
+    transition: 1.2s ease;
+    display: flex;
+    height: 100%;
+}
+</style>
 ```
 
 ### 选项
