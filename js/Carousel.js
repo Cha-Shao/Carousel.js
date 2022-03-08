@@ -30,25 +30,24 @@ function carouselNext(){
     i++
     if (i > items.length-1) i = 0;
     carousel.style.transform = "translateX(-"+i+"00%)";
-    const carouselPoint = document.getElementsByClassName('carouselPoint')
-    try {
+    if (document.querySelector("[c-point]")){
+        const carouselPoint = document.getElementsByClassName('carouselPoint')
         for (let i = 0; i < items.length; i++){
             const carouselPoint = document.getElementsByClassName('carouselPoint')
             carouselPoint[i].style.cssText='width: 9px;height:9px;background:lightgray;border-radius:100%;margin:5px;z-index:2;cursor:pointer;'}
             carouselPoint[_i].style.background='white'
-    }
-    catch(err) {
-        console.error(err);
     }
 }
 
 // 设置轮播页下面的点
 function setCarouselPointContainer() {
     const carouselPointContainer = document.querySelector("[c-point]");
-    const appendCarouselPointContainer = document.createElement("div")
-    appendCarouselPointContainer.className = 'carouselPointContainer'
-    carouselPointContainer.appendChild(appendCarouselPointContainer)
-    setCarouselPoint()
+    if (carouselPointContainer) {
+        const appendCarouselPointContainer = document.createElement("div")
+        appendCarouselPointContainer.className = 'carouselPointContainer'
+        carouselPointContainer.appendChild(appendCarouselPointContainer)
+        setCarouselPoint()
+    }
 }
 function setCarouselPoint(){
     for (let i = 0; i < items.length; i++) {
