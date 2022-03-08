@@ -1,3 +1,5 @@
+var carouselTime = 7000 //轮播切换的速度(默认7s)
+
 function sleep(millisecond) {
     return new Promise(resolve => {
         setTimeout(() => {
@@ -14,7 +16,7 @@ let i = 0;
 if (document.querySelector("[c-autoplay]")){
     setInterval(function() {
         carouselNext()
-    },7000);
+    },carouselTime);
 }
 
 // 上/下一页
@@ -29,6 +31,7 @@ function carouselNext(){
     carousel.style.transform = "translateX(-"+i+"00%)";
 }
 
+// 设置轮播页下面的点
 function setCarouselPointContainer() {
     const carouselPointContainer = document.querySelector("[c-point]");
     const appendCarouselPointContainer = document.createElement("div")
@@ -42,26 +45,19 @@ function setCarouselPoint(){
         const appendCarouselPoint = document.createElement("div")
         appendCarouselPoint.className = 'carouselPoint'
         carouselPointContainer[0].appendChild(appendCarouselPoint)
-        carouselPointContainer[0].style.display="flex"
-        carouselPointContainer[0].style.position="absolute"
-        carouselPointContainer[0].style.bottom="12px"
-        carouselPointContainer[0].style.left="50%"
-        carouselPointContainer[0].style.transform="translateX(-50%)"
+        carouselPointContainer[0].style.cssText="display:flex;position:absolute;bottom:12px;"
+        if (document.querySelector("[point-right]")) carouselPointContainer[0].style.right="27px"; else {carouselPointContainer[0].style.left="50%";carouselPointContainer[0].style.transform="translateX(-50%)"}
     }
     for (let i = 0; i < items.length; i++){
         const carouselPoint = document.getElementsByClassName('carouselPoint')
-        carouselPoint[i].style.width="9px"
-        carouselPoint[i].style.height="9px"
-        carouselPoint[i].style.background="lightgray"
-        carouselPoint[i].style.borderRadius="100%"
-        carouselPoint[i].style.margin="5px"
-        carouselPoint[i].style.zIndex=2
-        carouselPoint[i].onclick = 'setCarouselPage'
+        carouselPoint[i].setAttribute("onclick","setCarouselPage("+i+")")
+        carouselPoint[i].style.cssText='width: 9px;height:9px;background:lightgray;border-radius:100%;margin:5px;z-index:2;cursor:pointer;'
     }
 }
 
-function setCarouselPage(){
-    console.log('s')
+function setCarouselPage(setPage){
+    i = setPage
+    carousel.style.transform = "translateX(-"+i+"00%)";
 }
 
 setCarouselPointContainer()

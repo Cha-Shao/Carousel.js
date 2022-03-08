@@ -54,4 +54,11 @@ body {
 .carouselItem img {
   height: 100%;
 }
+
+.carouselItem .content {
+  position: absolute;
+  left: 37px;
+  bottom: 37px;
+  color: #e5e6eb;
+}
 /*# sourceMappingURL=style.css.map */
