@@ -2,26 +2,30 @@
 
 因为没有喜欢的轮播所以就自己做了
 
-### html结构
+# 如何使用
 
 ```html
-<div class="carouselContainer">
-    <div class="carousel">
-        <div class="carouselItem" c-item>
+<body>
+    <div class="carouselContainer" c-point c-autoplay>
+        <div class="carousel" carousel>
+            <div class="carouselItem" c-item>
+            </div>
+            <div class="carouselItem" c-item>
+            </div>
+            <div class="carouselItem" c-item>
+            </div>
         </div>
-        <div class="carouselItem" c-item>
+        <!-- 上下页可以放到别的地方 -->
+        <div class="previous">
+            <i class="iconfont icon-back carouselicons" onclick="carouselPrevious()"></i>
         </div>
-        <div class="carouselItem" c-item>
+        <div class="next">
+            <i class="iconfont icon-next carouselicons" onclick="carouselNext()"></i>
         </div>
     </div>
-    <!-- 上下页可以放到别的地方 -->
-    <div class="previous">
-        <i class="iconfont icon-back carouselicons" onclick="carouselPrevious()"></i>
-    </div>
-    <div class="next">
-        <i class="iconfont icon-next carouselicons" onclick="carouselNext()"></i>
-    </div>
-</div>
+    <script src="./js/Carousel.js"></script>
+</body>
+
 <style>
 .carouselContainer{
     overflow: hidden;
@@ -34,6 +38,7 @@
 }
 </style>
 ```
+> css可改名
 
 ### 选项
 
