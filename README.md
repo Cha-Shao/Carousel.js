@@ -36,6 +36,10 @@
     display: flex;
     height: 100%;
 }
+.carouselItem{
+    width: carouselContainer设置的宽度;
+    flex-shrink: 0;
+}
 </style>
 ```
 > css可改名
